@@ -28,6 +28,10 @@ export type Book = {
     previewLink: string;
     infoLink: string;
     canonicalVolumeLink: string;
+    imageLinks?: {
+      smallThumbnail: string;
+      thumbnail: string;
+    };
   };
   saleInfo: {
     country: string;

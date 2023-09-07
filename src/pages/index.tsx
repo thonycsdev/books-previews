@@ -1,4 +1,5 @@
 "use client";
+import BookList from "@/components/BookList/BookList";
 import { useBooks } from "@/hooks/useBooks";
 import React, { useState } from "react";
 export default function Home() {
@@ -8,12 +9,10 @@ export default function Home() {
     setBookName(userInput.toLowerCase());
   };
   return (
-    <div>
+    <div className="w-screen h-screen">
       <input type="text" onChange={(e) => setUserInput(e.target.value)} />
       <button onClick={handleSearch}>SEARCH</button>
-      {books?.map((book) => (
-        <div key={book.id}>{book.volumeInfo.title}</div>
-      ))}
+      <BookList books={books} />
     </div>
   );
 }
