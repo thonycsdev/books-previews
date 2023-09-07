@@ -12,7 +12,7 @@ function SearchBar(props: SearchBarProps) {
   };
   const { onSearch } = props;
   return (
-    <div className="pt-10">
+    <div className="">
       <form onSubmit={handleSubmitSearch} className="flex gap-8">
         <input
           type="text"

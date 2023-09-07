@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import BookCard from "../BookCard/BookCard";
-import { Book } from "@/models/book";
+import BooksContext from "@/hooks/Contexts/BooksContext";
 
-type BookListProps = {
-  books: Book[];
-};
-
-function BookList(props: BookListProps) {
-  const { books } = props;
+function BookList() {
+  const { books } = useContext(BooksContext);
+  if (!books.length) {
+    return <div>Please, use the search bar to search for books</div>;
+  }
   return (
     <ul className="flex w-full h-auto gap-10 flex-wrap justify-center">
       {books.map((book) => (
