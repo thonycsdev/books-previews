@@ -9,7 +9,7 @@ export default function Home() {
     setBookName(userInput.toLowerCase());
   };
   return (
-    <div className="w-screen h-screen">
+    <div className="w-full h-full bg-slate-400">
       <input type="text" onChange={(e) => setUserInput(e.target.value)} />
       <button onClick={handleSearch}>SEARCH</button>
       <BookList books={books} />

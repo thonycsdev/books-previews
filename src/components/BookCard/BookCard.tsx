@@ -12,15 +12,30 @@ function BookCard(props: BookCardProps) {
     ? book.volumeInfo.imageLinks.thumbnail
     : "/bookDefault.jpg";
   return (
-    <li className="w-80 w- h-80 bg-green-500 flex justify-center items-center m-2 text-center flex-col">
-      <Image
-        width={100}
-        height={100}
-        src={bookImage}
-        alt={book.volumeInfo.title}
-        className="justify-self-start"
-      />
-      <div>{book.volumeInfo.title}</div>
+    <li
+      className="w-80 h-fit bg-slate-200 rounded-3xl
+      m-8 text-center transition-all delay-100 hover:scale-110"
+    >
+      <div className="flex items-center flex-col p-5 gap-2">
+        <Image
+          width={100}
+          height={100}
+          src={bookImage}
+          alt={book.volumeInfo.title}
+          className="mb-auto mt-9 rounded-xl"
+        />
+        <div className="font-bold">{book.volumeInfo.title}</div>
+        <div>
+          {book.volumeInfo.authors.map((author) => (
+            <div key={author} className="font-thin">
+              {author}
+            </div>
+          ))}
+        </div>
+        <div className="font-semibold">
+          {new Date(book.volumeInfo.publishedDate).getFullYear()}
+        </div>
+      </div>
     </li>
   );
 }

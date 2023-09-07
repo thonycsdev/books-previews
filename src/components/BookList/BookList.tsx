@@ -9,7 +9,7 @@ type BookListProps = {
 function BookList(props: BookListProps) {
   const { books } = props;
   return (
-    <ul className="flex w-full h-auto bg-red-500 gap-10 flex-wrap">
+    <ul className="flex w-full h-auto gap-10 flex-wrap justify-center">
       {books.map((book) => (
         <BookCard book={book} key={book.id} />
       ))}
